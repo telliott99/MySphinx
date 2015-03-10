@@ -123,19 +123,55 @@ I don't want to track the files inside the ``_build`` directory so I put this in
     !.gitignore
     >
 
-Then I do
+Next I need to do ``git init`` and ``git add *``, etc.  But first, before I do the first commit, I go to GitHub, sign in, and set up a repo for this project using the website.  Click on ``+`` and follow the brief instructions.  Two clicks.  Read the instructions for copy-paste to Terminal.
+
+Now back in the project directory I do
 
 .. sourcecode:: bash
 
-    git init
-    git add *
-    
-At this point, before I do the first commit, I go to GitHub, sign in, and set up a repo for this project using the website.  Click on ``+`` and follow the brief instructions.
+    > cd Desktop
+    > cd MySphinx/
+    > git init
+    Initialized empty Git repository in /Users/telliott_admin/Desktop/MySphinx/.git/
+    > git add *
+    > git remote add origin git@github.com:telliott99/MySphinx.git
+    > git remote -v
+    origin	git@github.com:telliott99/MySphinx.git (fetch)
+    origin	git@github.com:telliott99/MySphinx.git (push)
+    > git commit -m "first commit"
+    [master (root-commit) 7c2ff23] first commit
+     7 files changed, 632 insertions(+)
+     create mode 100644 Makefile
+     create mode 100755 _build/.gitignore
+     create mode 100644 conf.py
+     create mode 100644 figs/sphinx1.png
+     create mode 100644 figs/sphinx2.png
+     create mode 100644 index.rst
+     create mode 100644 sphinx-intro.rst
+    > git push -u origin master
+    Counting objects: 11, done.
+    Delta compression using up to 4 threads.
+    Compressing objects: 100% (10/10), done.
+    Writing objects: 100% (11/11), 251.15 KiB | 0 bytes/s, done.
+    Total 11 (delta 0), reused 0 (delta 0)
+    To git@github.com:telliott99/MySphinx.git
+     * [new branch]      master -> master
+    Branch master set up to track remote branch master from origin.
+    >
 
-Now back in the project directory I do
-    
-    git remote add origin git@github.com:telliott99/MySphinx.git
-    git commit -m "first commit"
-    git push -u origin master
-    
+That is all there is to it.  We can even view the page on GitHub.
+
+https://github.com/telliott99/MySphinx/blob/master/sphinx-intro.rst
+
+It looks really good, even though the file is not designed to be read in this manner.  What we are doing is saving the source ``.rst`` files which Sphinx will transform into ``.html`` files suitable for viewing in a browser.  To see that output, again do this from the command line:
+
+.. sourcecode:: bash
+
+    > open -a Safari ~/Desktop/MySphinx/_build/html/index.html
+
+Or navigate there in the Finder and double-click.  I have a short-cut set where I can do ``oh`` from top-level in the project.  But to explain that would be getting ahead of ourselves.
+
+
+
+
 

@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 2
 
    sphinx-intro
+   sphinx
 
 
 Indices and tables
